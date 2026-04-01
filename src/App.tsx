@@ -1,30 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { 
-  Upload, 
-  Menu, 
-  Maximize, 
-  Minimize2, 
-  Search, 
-  Layers, 
-  ChevronDown, 
-  X,
-  Download,
-  RefreshCcw,
-  CheckCircle2,
-  Info,
-  Sliders,
-  ChevronLeft,
-  ChevronRight,
-  Settings,
-  FileType,
-  Target,
-  RefreshCw,
-  Share2,
-  Crop as CropIcon,
-  ArrowLeft
-} from 'lucide-react';
+import { Upload, Menu, Maximize, Minimize2, Search, Layers, ChevronDown, X, Download, RefreshCcw, CircleCheck as CheckCircle2, Info, FileSliders as Sliders, ChevronLeft, ChevronRight, Settings, FileType, Target, RefreshCw, Share2, Crop as CropIcon, ArrowLeft } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import JSZip from 'jszip';
 import Cropper from 'cropperjs';
@@ -550,12 +527,12 @@ const ToolPage: React.FC<{ forcedTool?: ToolType | null }> = ({ forcedTool = nul
       </Helmet>
 
       <Navbar onNavigate={handleSafeNavigation} />
-<main className="flex-grow pt-16">
-  <div className="max-w-7xl mx-auto px-8 py-6">
-    {forcedTool && (
+      <main className="flex-grow pt-16">
+        <div className="max-w-7xl mx-auto px-8 py-6">
+          {forcedTool && (
             <>
-              <Breadcrumbs 
-                current={TOOLS_CONFIG.find(t => t.id === forcedTool)?.label || ''} 
+              <Breadcrumbs
+                current={TOOLS_CONFIG.find(t => t.id === forcedTool)?.label || ''}
                 onNavigate={handleSafeNavigation}
               />
               <StructuredData tool={forcedTool} />
