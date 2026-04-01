@@ -24,10 +24,10 @@ const SEOContent: React.FC<SEOContentProps> = ({ tool }) => {
       {/* How to Use */}
       <section className="relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="bg-surface-container-lowest rounded-[3rem] p-10 md:p-20 border border-outline-variant/20 shadow-2xl shadow-primary/5 relative">
+          <div className="bg-surface-container-lowest rounded-[3rem] p-8 md:p-12 border border-outline-variant/20 shadow-2xl shadow-primary/5 relative">
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[3rem] -z-10"></div>
-            <h2 className="text-3xl md:text-4xl font-black font-headline mb-16 text-center tracking-tight">How to Use PixelResize</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+            <h2 className="text-3xl md:text-4xl font-black font-headline mb-10 text-center tracking-tight">How to Use PixelResize</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
               {/* Connecting Line (Desktop) */}
               <div className="hidden md:block absolute top-10 left-[15%] right-[15%] h-0.5 bg-gradient-to-r from-transparent via-outline-variant/30 to-transparent -z-10"></div>
               
@@ -57,7 +57,7 @@ const SEOContent: React.FC<SEOContentProps> = ({ tool }) => {
       {/* Key Features */}
       <section className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="group p-10 rounded-[2.5rem] bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
+          <div className="group p-8 rounded-[2.5rem] bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
             <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
               <Zap className="w-8 h-8" />
             </div>
@@ -65,7 +65,7 @@ const SEOContent: React.FC<SEOContentProps> = ({ tool }) => {
             <p className="text-on-surface-variant text-base leading-relaxed opacity-80">Process dozens of images in seconds. No waiting for server uploads or queues. Everything happens in real-time.</p>
           </div>
           
-          <div className="group p-10 rounded-[2.5rem] bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
+          <div className="group p-8 rounded-[2.5rem] bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
             <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
               <Shield className="w-8 h-8" />
             </div>
@@ -73,7 +73,7 @@ const SEOContent: React.FC<SEOContentProps> = ({ tool }) => {
             <p className="text-on-surface-variant text-base leading-relaxed opacity-80">Your photos never leave your computer. All <strong>image compression</strong> happens locally in your browser. Security first.</p>
           </div>
 
-          <div className="group p-10 rounded-[2.5rem] bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
+          <div className="group p-8 rounded-[2.5rem] bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
             <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
               <ImageIcon className="w-8 h-8" />
             </div>

@@ -22,7 +22,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
   return (
     <>
-      <footer className="bg-[#020617] py-16 mt-16 border-t border-white/5">
+      <footer className="bg-[#020617] py-10 mt-10 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
 
           {/* Top Grid */}
