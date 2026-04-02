@@ -1,8 +1,31 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { Upload, Menu, Maximize, Minimize2, Search, Layers, ChevronDown, X, Download, RefreshCcw, CircleCheck as CheckCircle2, Info, FileSliders as Sliders, ChevronLeft, ChevronRight, Settings, FileType, Target, RefreshCw, Share2, Crop as CropIcon, ArrowLeft } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { 
+  Upload, 
+  Menu, 
+  Maximize, 
+  Minimize2, 
+  Search, 
+  Layers, 
+  ChevronDown, 
+  X,
+  Download,
+  RefreshCcw,
+  CheckCircle2,
+  Info,
+  Sliders,
+  ChevronLeft,
+  ChevronRight,
+  Settings,
+  FileType,
+  Target,
+  RefreshCw,
+  Share2,
+  Crop as CropIcon,
+  ArrowLeft
+} from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import JSZip from 'jszip';
 import Cropper from 'cropperjs';
 import 'cropperjs/dist/cropper.css';
@@ -116,6 +139,7 @@ const ToolPage: React.FC<{ forcedTool?: ToolType | null }> = ({ forcedTool = nul
   const location = useLocation();
 
   const seo = forcedTool ? TOOL_SEO_CONFIG[forcedTool] : TOOL_SEO_CONFIG['home'];
+  const canonicalUrl = forcedTool ? `https://pixelresize.site/${forcedTool}-image` : 'https://pixelresize.site/';
 
   const resetToolState = () => {
     setImages([]);
@@ -524,15 +548,16 @@ const ToolPage: React.FC<{ forcedTool?: ToolType | null }> = ({ forcedTool = nul
         <meta name="description" content={seo.description} />
         <meta property="og:title" content={seo.ogTitle} />
         <meta property="og:description" content={seo.description} />
+        <link rel="canonical" href={canonicalUrl} />
       </Helmet>
 
       <Navbar onNavigate={handleSafeNavigation} />
-      <main className="flex-grow pt-16">
-        <div className="max-w-7xl mx-auto px-8 py-6">
-          {forcedTool && (
+<main className="flex-grow pt-16">
+  <div className="max-w-7xl mx-auto px-8 py-6">
+    {forcedTool && (
             <>
-              <Breadcrumbs
-                current={TOOLS_CONFIG.find(t => t.id === forcedTool)?.label || ''}
+              <Breadcrumbs 
+                current={TOOLS_CONFIG.find(t => t.id === forcedTool)?.label || ''} 
                 onNavigate={handleSafeNavigation}
               />
               <StructuredData tool={forcedTool} />
@@ -991,61 +1016,61 @@ const ToolPage: React.FC<{ forcedTool?: ToolType | null }> = ({ forcedTool = nul
           <h2>All Tools</h2>
 
           <div className="tools-grid">
-            <div onClick={() => handleSafeNavigation('/resize-image')} className="tool-card">
+            <Link to="/resize-image" className="tool-card">
               <div className="tool-card-icon-wrapper">
                 <Maximize className="w-5 h-5" />
               </div>
               <h3>Resize Image</h3>
               <p>Change width & height with precision</p>
-            </div>
+            </Link>
 
-            <div onClick={() => handleSafeNavigation('/compress-image')} className="tool-card">
+            <Link to="/compress-image" className="tool-card">
               <div className="tool-card-icon-wrapper">
                 <Minimize2 className="w-5 h-5" />
               </div>
               <h3>Compress Image</h3>
               <p>Reduce file size without quality loss</p>
-            </div>
+            </Link>
 
-            <div onClick={() => handleSafeNavigation('/convert-image')} className="tool-card">
+            <Link to="/convert-image" className="tool-card">
               <div className="tool-card-icon-wrapper">
                 <RefreshCw className="w-5 h-5" />
               </div>
               <h3>Convert Image</h3>
               <p>JPG, PNG, WEBP & more formats</p>
-            </div>
+            </Link>
 
-            <div onClick={() => handleSafeNavigation('/crop-image')} className="tool-card">
+            <Link to="/crop-image" className="tool-card">
               <div className="tool-card-icon-wrapper">
                 <CropIcon className="w-5 h-5" />
               </div>
               <h3>Crop Image</h3>
               <p>Trim and adjust image area easily</p>
-            </div>
+            </Link>
 
-            <div onClick={() => handleSafeNavigation('/target-size')} className="tool-card">
+            <Link to="/target-size" className="tool-card">
               <div className="tool-card-icon-wrapper">
                 <Target className="w-5 h-5" />
               </div>
               <h3>Target Size</h3>
               <p>Optimize image to exact KB size</p>
-            </div>
+            </Link>
 
-            <div onClick={() => handleSafeNavigation('/transform-image')} className="tool-card">
+            <Link to="/transform-image" className="tool-card">
               <div className="tool-card-icon-wrapper">
                 <Sliders className="w-5 h-5" />
               </div>
               <h3>Transform</h3>
               <p>Rotate, flip & adjust orientation</p>
-            </div>
+            </Link>
 
-            <div onClick={() => handleSafeNavigation('/export-image')} className="tool-card">
+            <Link to="/export-image" className="tool-card">
               <div className="tool-card-icon-wrapper">
                 <Download className="w-5 h-5" />
               </div>
               <h3>Export</h3>
               <p>Download in your desired format</p>
-            </div>
+            </Link>
           </div>
         </section>
 

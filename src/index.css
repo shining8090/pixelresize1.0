@@ -1,32 +1,11 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  --font-headline: "Manrope", sans-serif;
-  --font-body: "Inter", sans-serif;
-
-  --color-primary: #3f5b95;
-  --color-primary-container: #5874b0;
-  --color-on-primary: #ffffff;
-  
-  --color-secondary: #545e77;
-  --color-secondary-container: #d6dffd;
-  
-  --color-background: #f8f9fa;
-  --color-surface: #f8f9fa;
-  --color-on-surface: #191c1d;
-  --color-on-surface-variant: #444750;
-  
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #f3f4f5;
-  --color-surface-container: #edeeef;
-  --color-surface-container-high: #e7e8e9;
-  --color-surface-container-highest: #e1e3e4;
-  
-  --color-outline: #747781;
-  --color-outline-variant: #c4c6d1;
-  
-  --radius-lg: 2rem;
-  --radius-xl: 3rem;
+@layer base {
+  :root {
+    /* Base styles */
+  }
 }
 
 @layer base {

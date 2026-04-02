@@ -13,6 +13,20 @@ const StructuredData: React.FC<StructuredDataProps> = ({ tool }) => {
     "url": "https://pixelresize.site/"
   };
 
+  const webAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": tool ? `${tool.charAt(0).toUpperCase() + tool.slice(1)} Image Tool` : "PixelResize Image Tools",
+    "url": tool ? `https://pixelresize.site/${tool}-image` : "https://pixelresize.site/",
+    "applicationCategory": "Utility",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  };
+
   if (!tool) {
     const websiteSchema = {
       "@context": "https://schema.org",
@@ -59,6 +73,9 @@ const StructuredData: React.FC<StructuredDataProps> = ({ tool }) => {
         </script>
         <script type="application/ld+json">
           {JSON.stringify(organizationSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(webAppSchema)}
         </script>
       </Helmet>
     );
@@ -115,6 +132,9 @@ const StructuredData: React.FC<StructuredDataProps> = ({ tool }) => {
       </script>
       <script type="application/ld+json">
         {JSON.stringify(organizationSchema)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(webAppSchema)}
       </script>
     </Helmet>
   );
