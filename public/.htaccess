@@ -1,0 +1,16 @@
+# Fix MIME types
+AddType application/javascript .js
+AddType text/css .css
+AddType text/html .html
+
+# Prevent issues
+Options -MultiViews
+
+# Enable rewrite
+RewriteEngine On
+RewriteBase /
+
+# SPA routing (React)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
